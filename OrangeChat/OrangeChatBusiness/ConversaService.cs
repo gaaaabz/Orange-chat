@@ -1,7 +1,7 @@
 using OrangeChatModel;
 using OrangeChatData;
 
-namespace OrangeChat.Business.Services;
+namespace OrangeChatBusiness;
 public class ConversaService : ICrudOrangeChat<ConversaModel>
 {
 	private readonly ApplicationDbContext _context;

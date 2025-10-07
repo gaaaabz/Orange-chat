@@ -1,4 +1,4 @@
-namespace OrangeChat.Domain.Models;
+namespace OrangeChatModels;
 public class StatusModel
 {
     public string? Id { get; set; }

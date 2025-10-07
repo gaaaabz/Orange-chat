@@ -1,31 +1,34 @@
-﻿using CandidatosModel;
-using CandidatosData;
+﻿using OrangeChatModel;
+using OrangeChatData;
 
-namespace CandidatosBusiness;
-public class CandidatoService(ApplicationDbContext context) : ICandidatoService
+namespace OrangeChatBusiness;
+public class UsuarioService : ICrudOrangeChat<UsuarioModel>
 {
-    private readonly ApplicationDbContext _context = context;
+    private readonly ApplicationDbContext _context;
 
-    public List<CandidatoModel> ListarTodos() => [.. _context.Candidatos];
+    public UsuarioService(ApplicationDbContext context) => _context = context;
 
-    public CandidatoModel? ObterPorId(string id) =>
-        _context.Candidatos.FirstOrDefault(c => c.Id == id);
+    public List<UsuarioModel> ListarTodos() => _context.Usuarios.ToList();
 
-    public CandidatoModel Criar(CandidatoModel candidato)
+    public UsuarioModel? ObterPorId(string id) => _context.Usuarios.FirstOrDefault(u => u.Id == id);
+
+    public UsuarioModel Criar(UsuarioModel usuario)
     {
-        _context.Candidatos.Add(candidato);
+        _context.Usuarios.Add(usuario);
         _context.SaveChanges();
-        return candidato;
+        return usuario;
     }
 
-    public bool Atualizar(CandidatoModel candidato)
+    public bool Atualizar(UsuarioModel usuario)
     {
-        var existente = _context.Candidatos.Find(candidato.Id);
+        var existente = _context.Usuarios.Find(usuario.Id);
         if (existente == null) return false;
 
-        existente.Nome = candidato.Nome;
-        existente.Partido = candidato.Partido;
-        existente.Idade = candidato.Idade;
+        existente.Nome = usuario.Nome;
+        existente.Email = usuario.Email;
+        existente.Senha = usuario.Senha;
+        existente.Telefone = usuario.Telefone;
+        existente.Tipo = usuario.Tipo;
 
         _context.SaveChanges();
         return true;
@@ -33,10 +36,10 @@ public class CandidatoService(ApplicationDbContext context) : ICandidatoService
 
     public bool Remover(string id)
     {
-        var candidato = _context.Candidatos.Find(id);
-        if (candidato == null) return false;
+        var usuario = _context.Usuarios.Find(id);
+        if (usuario == null) return false;
 
-        _context.Candidatos.Remove(candidato);
+        _context.Usuarios.Remove(usuario);
         _context.SaveChanges();
         return true;
     }

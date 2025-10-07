@@ -1,13 +1,13 @@
-﻿using CandidatosModel;
+﻿using System.Collections.Generic;
 
-namespace CandidatosBusiness
+namespace OrangeChatBusiness
 {
-    public interface ICandidatoService
+    public interface ICrudOrangeChat<T>
     {
-        List<CandidatoModel> ListarTodos();
-        CandidatoModel? ObterPorId(string id);
-        CandidatoModel Criar(CandidatoModel candidato);
-        bool Atualizar(CandidatoModel candidato);
+        List<T> ListarTodos();
+        T? ObterPorId(string id);
+        T Criar(T entity);
+        bool Atualizar(T entity);
         bool Remover(string id);
     }
 }
