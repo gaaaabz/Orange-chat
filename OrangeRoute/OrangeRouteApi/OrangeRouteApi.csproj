@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="9.23.80" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrangeRouteBusiness\OrangeRouteBusiness.csproj" />
+    <ProjectReference Include="..\OrangeRouteModel\OrangeRouteModel.csproj" />
+	<ProjectReference Include="..\OrangeRouteData\OrangeRouteData.csproj" />
+  </ItemGroup>
+
+</Project>

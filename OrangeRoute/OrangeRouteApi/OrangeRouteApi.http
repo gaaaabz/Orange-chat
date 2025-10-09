@@ -1,0 +1,231 @@
+﻿### ====================== TIPO USUARIO ====================== ###
+@controller = tipousuario
+
+### 🟢 GET - Listar todos os tipos de usuário
+GET {{baseUrl}}/api/{{controller}}
+Accept: application/json
+
+### 🔵 POST - Criar tipo de usuário
+POST {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "nome": "Admin"
+}
+
+### 🟡 GET - Obter tipo de usuário por ID
+GET {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+### 🟠 PUT - Atualizar tipo de usuário
+PUT {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "idTipoUsuario": 1,
+  "nome": "Cliente"
+}
+
+### 🔴 DELETE - Remover tipo de usuário
+DELETE {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+
+### ====================== USUARIOS ====================== ###
+@controller = usuarios
+
+### 🟢 GET - Listar todos os usuários
+GET {{baseUrl}}/api/{{controller}}
+Accept: application/json
+
+### 🔵 POST - Criar usuário
+POST {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "nome": "Gabriel Cardoso",
+  "email": "gabriel@email.com",
+  "senha": "123456",
+  "telefone": "11999999999",
+  "idTipoUsuario": 1
+}
+
+### 🟡 GET - Obter usuário por ID
+GET {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+### 🟠 PUT - Atualizar usuário
+PUT {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "idUsuario": 1,
+  "nome": "Gabriel Atualizado",
+  "email": "gabriel@email.com",
+  "senha": "123456",
+  "telefone": "11999999999",
+  "idTipoUsuario": 1
+}
+
+### 🔴 DELETE - Remover usuário
+DELETE {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+
+### ====================== FAVORITOS ====================== ###
+@controller = favoritos
+
+### 🟢 GET - Listar todos os favoritos
+GET {{baseUrl}}/api/{{controller}}
+Accept: application/json
+
+### 🔵 POST - Criar favorito
+POST {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "idUsuario": 1
+}
+
+### 🟡 GET - Obter favorito por ID
+GET {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+### 🟠 PUT - Atualizar favorito
+PUT {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "idFavoritos": 1,
+  "idUsuario": 1
+}
+
+### 🔴 DELETE - Remover favorito
+DELETE {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+
+### ====================== TRILHA DE CARREIRA ====================== ###
+@controller = trilhacarreira
+
+### 🟢 GET - Listar todas as trilhas
+GET {{baseUrl}}/api/{{controller}}
+Accept: application/json
+
+### 🔵 POST - Criar trilha
+POST {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "conteudo": "Conteúdo da trilha",
+  "idFavoritos": 1
+}
+
+### 🟡 GET - Obter trilha por ID
+GET {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+### 🟠 PUT - Atualizar trilha
+PUT {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "idTrilhaCarreira": 1,
+  "conteudo": "Conteúdo atualizado",
+  "idFavoritos": 1
+}
+
+### 🔴 DELETE - Remover trilha
+DELETE {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+
+### ====================== COMENTARIOS ====================== ###
+@controller = comentario
+
+### 🟢 GET - Listar todos os comentários
+GET {{baseUrl}}/api/{{controller}}
+Accept: application/json
+
+### 🔵 POST - Criar comentário
+POST {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "conteudo": "Comentário exemplo",
+  "idTrilhaCarreira": 1,
+  "idUsuario": 1
+}
+
+### 🟡 GET - Obter comentário por ID
+GET {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+### 🟠 PUT - Atualizar comentário
+PUT {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "idComentario": 1,
+  "conteudo": "Comentário atualizado",
+  "idTrilhaCarreira": 1,
+  "idUsuario": 1
+}
+
+### 🔴 DELETE - Remover comentário
+DELETE {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+
+### ====================== TAGS ====================== ###
+@controller = tag
+
+### 🟢 GET - Listar todas as tags
+GET {{baseUrl}}/api/{{controller}}
+Accept: application/json
+
+### 🔵 POST - Criar tag
+POST {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "nome": "Backend"
+}
+
+### 🟡 GET - Obter tag por ID
+GET {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+### 🟠 PUT - Atualizar tag
+PUT {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "idTag": 1,
+  "nome": "Frontend"
+}
+
+### 🔴 DELETE - Remover tag
+DELETE {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+
+### ====================== TAGPOST ====================== ###
+@controller = tagpost
+
+### 🟢 GET - Listar todos os tagposts
+GET {{baseUrl}}/api/{{controller}}
+Accept: application/json
+
+### 🔵 POST - Criar tagpost
+POST {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "idTag": 1,
+  "idTrilhaCarreira": 1
+}
+
+### 🟡 GET - Obter tagpost por ID
+GET {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
+
+### 🟠 PUT - Atualizar tagpost
+PUT {{baseUrl}}/api/{{controller}}
+Content-Type: application/json
+{
+  "idTagPost": 1,
+  "idTag": 1,
+  "idTrilhaCarreira": 1
+}
+
+### 🔴 DELETE - Remover tagpost
+DELETE {{baseUrl}}/api/{{controller}}/1
+Accept: application/json
